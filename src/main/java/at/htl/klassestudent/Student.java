@@ -6,6 +6,12 @@ public class Student implements Comparable<Student> {
     private String nachname;
 
     public Student() {
+        Student[] students = {
+                new Student("Meris", "Besic"),
+                new Student("Nina", "Weissengruber"),
+                new Student("Magdalena", "Scholz"),
+                new Student("Florian", "Klausner")
+        };
     }
 
     public Student(String vorname, String nachname) {

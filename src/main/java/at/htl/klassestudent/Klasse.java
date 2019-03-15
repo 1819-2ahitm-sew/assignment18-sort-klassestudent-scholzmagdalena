@@ -4,27 +4,30 @@ public class Klasse extends Student {
 
     public static void main(String[] args) {
         
-        int klassenbezeignung;
+        int klassenbezeichnung;
         Student[] students = new Student[7];
-        Student[] studentssortiert1;
-        Student[] studentssortiert2;
+        Student[] studentssortiert;
 
-        studentssortiert1 = sortBubble(students);
-        studentssortiert2 = sortInsertion(students);
+        studentssortiert = sortBubble(students);
+        studentssortiert = sortInsertion(students);
 
-        for (int i = 0; i < studentssortiert1.length; i++) {
-            System.out.println(studentssortiert1[i] + ", ");
+        for (int i = 0; i < studentssortiert.length; i++) {
+            System.out.println(studentssortiert[i] + ", ");
         }
     }
     public static Student[] sortBubble(Student[] students){
         int iMin = 0;
         for (int i = 0; i < students.length; i++) {
-            for (int j = i+1; j < students.length-1; j++) {
+            for (int j = i; j < students.length-1; j++) {
                 if(students[j].compareTo(students[j]) > students[j+1].compareTo(students[j+1])){
                     iMin = j;
                 }
             }
-            swap(students, i, iMin);
+            Student help;
+            help = students[i];
+            students[i] = students[iMin];
+            students[iMin] = help;
+
             System.out.println(students[i] + " ");
         }
         return students;
@@ -42,11 +45,5 @@ public class Klasse extends Student {
             students[j] = help;
         }
         return students;
-    }
-    private static void swap(Student[] students, int i, int j){
-        Student help;
-        help = students[i];
-        students[i] = students[j];
-        students[j] = help;
     }
 }
